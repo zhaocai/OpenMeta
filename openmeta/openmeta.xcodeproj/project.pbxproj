@@ -13,6 +13,14 @@
 		6DC082D20F30CED400CF899F /* OpenMetaBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC082D10F30CED400CF899F /* OpenMetaBackup.m */; };
 		8DD76F9A0486AA7600D96B5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
+		DC38A53E1654319700E3BBDB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC38A53D1654319700E3BBDB /* Cocoa.framework */; };
+		DC38A5481654319700E3BBDB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC38A5461654319700E3BBDB /* InfoPlist.strings */; };
+		DC38A550165431C400E3BBDB /* OpenMeta.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DA077300EF6EF74008B837B /* OpenMeta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC38A551165431C400E3BBDB /* OpenMetaBackup.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DC082D00F30CED400CF899F /* OpenMetaBackup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC38A552165431C400E3BBDB /* OpenMetaPrefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DBE7D420FA21EEB00FAB8B4 /* OpenMetaPrefs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC38A553165431D000E3BBDB /* OpenMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA0772F0EF6EF74008B837B /* OpenMeta.m */; };
+		DC38A554165431D000E3BBDB /* OpenMetaBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC082D10F30CED400CF899F /* OpenMetaBackup.m */; };
+		DC38A555165431D000E3BBDB /* OpenMetaPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE7D430FA21EEB00FAB8B4 /* OpenMetaPrefs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,7 +47,15 @@
 		6DC082D00F30CED400CF899F /* OpenMetaBackup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenMetaBackup.h; path = ../OpenMetaBackup.h; sourceTree = SOURCE_ROOT; };
 		6DC082D10F30CED400CF899F /* OpenMetaBackup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenMetaBackup.m; path = ../OpenMetaBackup.m; sourceTree = SOURCE_ROOT; };
 		6DDF0C3A0F405DD80025CDBF /* openmeta.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = openmeta.1; sourceTree = "<group>"; };
-		8DD76FA10486AA7600D96B5E /* omtool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = omtool; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD76FA10486AA7600D96B5E /* openmeta */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = openmeta; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC38A53B1654319700E3BBDB /* openmeta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = openmeta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC38A53D1654319700E3BBDB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DC38A5401654319700E3BBDB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DC38A5411654319700E3BBDB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DC38A5421654319700E3BBDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC38A5451654319700E3BBDB /* omtag-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "omtag-Info.plist"; sourceTree = "<group>"; };
+		DC38A5471654319700E3BBDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC38A5491654319700E3BBDB /* omtag-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "omtag-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +68,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC38A5371654319700E3BBDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC38A53E1654319700E3BBDB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -61,6 +85,7 @@
 				08FB7795FE84155DC02AAC07 /* Source */,
 				C6859EA2029092E104C91782 /* Documentation */,
 				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
+				DC38A53C1654319700E3BBDB /* Frameworks */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
 			);
 			name = omtool;
@@ -93,7 +118,8 @@
 		1AB674ADFE9D54B511CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8DD76FA10486AA7600D96B5E /* omtool */,
+				8DD76FA10486AA7600D96B5E /* openmeta */,
+				DC38A53B1654319700E3BBDB /* openmeta.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,7 +132,59 @@
 			name = Documentation;
 			sourceTree = "<group>";
 		};
+		DC38A53C1654319700E3BBDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC38A5431654319700E3BBDB /* openmeta.framework */,
+				DC38A53D1654319700E3BBDB /* Cocoa.framework */,
+				DC38A53F1654319700E3BBDB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC38A53F1654319700E3BBDB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC38A5401654319700E3BBDB /* AppKit.framework */,
+				DC38A5411654319700E3BBDB /* CoreData.framework */,
+				DC38A5421654319700E3BBDB /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DC38A5431654319700E3BBDB /* openmeta.framework */ = {
+			isa = PBXGroup;
+			children = (
+				DC38A5441654319700E3BBDB /* Supporting Files */,
+			);
+			name = openmeta.framework;
+			path = omtag;
+			sourceTree = "<group>";
+		};
+		DC38A5441654319700E3BBDB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC38A5451654319700E3BBDB /* omtag-Info.plist */,
+				DC38A5461654319700E3BBDB /* InfoPlist.strings */,
+				DC38A5491654319700E3BBDB /* omtag-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DC38A5381654319700E3BBDB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC38A550165431C400E3BBDB /* OpenMeta.h in Headers */,
+				DC38A551165431C400E3BBDB /* OpenMetaBackup.h in Headers */,
+				DC38A552165431C400E3BBDB /* OpenMetaPrefs.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		8DD76F960486AA7600D96B5E /* openmeta */ = {
@@ -124,8 +202,26 @@
 			name = openmeta;
 			productInstallPath = "$(HOME)/bin";
 			productName = omtool;
-			productReference = 8DD76FA10486AA7600D96B5E /* omtool */;
+			productReference = 8DD76FA10486AA7600D96B5E /* openmeta */;
 			productType = "com.apple.product-type.tool";
+		};
+		DC38A53A1654319700E3BBDB /* omtag */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC38A54D1654319700E3BBDB /* Build configuration list for PBXNativeTarget "omtag" */;
+			buildPhases = (
+				DC38A5361654319700E3BBDB /* Sources */,
+				DC38A5371654319700E3BBDB /* Frameworks */,
+				DC38A5381654319700E3BBDB /* Headers */,
+				DC38A5391654319700E3BBDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = omtag;
+			productName = omtag;
+			productReference = DC38A53B1654319700E3BBDB /* openmeta.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -147,9 +243,21 @@
 			projectRoot = "";
 			targets = (
 				8DD76F960486AA7600D96B5E /* openmeta */,
+				DC38A53A1654319700E3BBDB /* omtag */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC38A5391654319700E3BBDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC38A5481654319700E3BBDB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8DD76F990486AA7600D96B5E /* Sources */ = {
@@ -163,21 +271,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC38A5361654319700E3BBDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC38A553165431D000E3BBDB /* OpenMeta.m in Sources */,
+				DC38A554165431D000E3BBDB /* OpenMetaBackup.m in Sources */,
+				DC38A555165431D000E3BBDB /* OpenMetaPrefs.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DC38A5461654319700E3BBDB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC38A5471654319700E3BBDB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB927508733DD40010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = omtool_Prefix.pch;
+				GCC_PREFIX_HEADER = openmeta_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = omtool;
+				PRODUCT_NAME = openmeta;
 			};
 			name = Debug;
 		};
@@ -185,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -219,6 +350,71 @@
 			};
 			name = Release;
 		};
+		DC38A54E1654319700E3BBDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "omtag/omtag-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "omtag/omtag-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = "-fobjc-gc";
+				PRODUCT_NAME = openmeta;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		DC38A54F1654319700E3BBDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "omtag/omtag-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "omtag/omtag-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = "-fobjc-gc";
+				PRODUCT_NAME = openmeta;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -239,6 +435,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		DC38A54D1654319700E3BBDB /* Build configuration list for PBXNativeTarget "omtag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC38A54E1654319700E3BBDB /* Debug */,
+				DC38A54F1654319700E3BBDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
