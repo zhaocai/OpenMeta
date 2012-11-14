@@ -443,6 +443,7 @@
 				DC38A54F1654319700E3BBDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
