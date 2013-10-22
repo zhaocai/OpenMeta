@@ -84,7 +84,7 @@ OTHER DEALINGS IN THE SOFTWARE.
         ----------------------
         Open Meta is a clean simple way to set user entered searchable metadata on any file on Mac OS X. 
         Concepts like namespaces are not encouraged, as most users have no idea what a namespace is. The tradeoff is a 
-        small amount of _understandable_ ambiguity - searching for Tags:apple (i.e. kMDItemOMUserTags == "apple"cd) will find
+        small amount of _understandable_ ambiguity - searching for Tags:apple (i.e. kMDItemTagsForSearching == "apple"cd) will find
         all files having to do with both the fruit one can eat, and the company that makes computers. Users expect this. 
         With namespaces an improperly constructed query will usually result in 'no matches'. 
 */
@@ -136,10 +136,13 @@ OTHER DEALINGS IN THE SOFTWARE.
 // A very common errno error code is ENOATTR - the attribute is not set on the file. - which we don't consider an error
 
 extern NSString* const kMDItemOMUserTags;
+extern NSString* const kMDItemUserTags;
 extern NSString* const kMDItemOMUserTagTime;
 extern NSString* const kMDItemOMDocumentDate;
 extern NSString* const kMDItemOMBookmarks; // list of urls - bookmarks as nsarray nsstring 
-extern NSString* const kMDItemOMUserTagApplication;
+
+// when searching for tags you need to use the right mditem, use kMDItemTagsForSearching (changed with new tags in 10.9)
+
 
 extern const double kMDItemOMMaxRating;
 
@@ -147,6 +150,9 @@ extern const double kMDItemOMMaxRating;
 @interface OpenMeta : NSObject {
 
 }
+
++(NSString*)tagsToSearchFor;
+
 
 // User tags - an array of tags as entered by the user. This is not the place to 
 // store program generated gook, like GUIDs or urls, etc.
@@ -185,18 +191,6 @@ extern const double kMDItemOMMaxRating;
 +(NSError*)setString:(NSString*)string keyName:(NSString*)keyName path:(NSString*)path;
 +(NSString*)getString:(NSString*)keyName path:(NSString*)path error:(NSError**)error;
 
-+(NSError*)setNumber:(NSNumber*)number keyName:(NSString *)keyName path:(NSString *)path;
-+(NSNumber *)getNumber:(NSString*)keyName path:(NSString*)path error:(NSError**)error;
-
-+(NSError*)setBoolValue:(BOOL)boolValue keyName:(NSString *)keyName path:(NSString *)path;
-+(BOOL)getBoolValue:(NSString*)keyName path:(NSString*)path error:(NSError**)error;
-
-+(NSError*)setDate:(NSDate *)date keyName:(NSString *)keyName path:(NSString *)path;
-+(NSDate *)getDate:(NSString*)keyName path:(NSString*)path error:(NSError**)error;
-
-+(NSError*)setData:(NSData *)data keyName:(NSString *)keyName path:(NSString *)path;
-+(NSData *)getData:(NSString*)keyName path:(NSString*)path error:(NSError**)error;
-
 
 // If you have a 'lot' (ie 200 bytes to 4k) to set as a metadata on a file, then what you want to do
 // is use the setDictionaries call. You organize your data in an array of dictionaries, 
@@ -222,12 +216,8 @@ extern const double kMDItemOMMaxRating;
 
 // dictionaries:
 // Spotlight can't have dictionaries in it's database.
-// remember that. You can store dictionaries using getXAttrMetaDataNoSpotlightMirror, or just setXAttr
+// remember that. You can store dictionaries using setXAttr
 
-
-// to set data with no spotlight mirror, use this. omKey is something like kMDItemOMSomeKeyThatsNotNeededInSpotlight
-+(id)getXAttrMetaDataNoSpotlightMirror:(NSString*)omKey path:(NSString*)path error:(NSError**)error;
-+(NSError*)setXAttrNoSpotlightMirror:(id)plistObject omKey:(NSString*)omKey path:(NSString*)path;
 
 // These getters and setters are to set xattr data that will be NOT read and indexed by spotlight - nor are openmeta time stamps set, nor is restore done on backup.
 // The passed plist object will be converted to data as a binary plist object. (plist object is for example an nsdictionary or nsarray)
@@ -244,7 +234,5 @@ extern const double kMDItemOMMaxRating;
 +(void)registerOMAttributes:(NSDictionary*)typicalAttributes forAppName:(NSString*)appName;
 
 +(NSString*)spotlightKey:(NSString*)inKeyName;
-+(NSString*)openmetaKey:(NSString*)inKeyName;
-+(NSString*)openmetaTimeKey:(NSString*)inKeyName;
 
 @end

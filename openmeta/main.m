@@ -60,7 +60,6 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
 #import "OpenMeta.h"
-#import "OpenMetaBackup.h"
 #import "OpenMetaPrefs.h"
 
 BOOL gShowErrors = YES;
@@ -296,7 +295,7 @@ int main (int argc, const char * argv[])
 		"example (set rating 0 - 5 stars):  openmeta -r 3.5 -p PATH[s]\n"
 		"example (print rating):  openmeta -r -p PATH[s]\n"
 		"example (clear rating):  openmeta -r 0.0 -p PATH[s]\n"
-		"example (lousy rating):  openmeta -r 0.1 -p PATH[s]\n";
+		"example (lousy rating):  openmeta -r 0.1 -p PATH[s]\n"
 		"example (to suppress output add -v):  openmeta -v ... \n";
 		fprintf(stderr, "%s", usage);
 		[pool drain];
@@ -381,7 +380,6 @@ int main (int argc, const char * argv[])
 	[OpenMetaPrefs synchPrefs];
 	
 	// we need to sleep while the backup thread does its job...
-	[OpenMetaBackup appIsTerminating];
 	
     [pool drain];
     return 0;
